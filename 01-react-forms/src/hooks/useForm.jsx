@@ -8,7 +8,7 @@
 import { useState, useEffect } from 'react'
 
 function useForm (callback, defaults) {
-  // Estaod unico para guardar los datos de mi formulario en un objecto
+  // Estado unico para guardar los datos de mi formulario en un objeto
   const [input, setInput] = useState(defaults)
 
   // Cargar valores por defecto
