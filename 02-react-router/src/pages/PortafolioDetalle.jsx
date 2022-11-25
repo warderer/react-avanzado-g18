@@ -1,5 +1,7 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 // useParams me permite recuperar rutas dinamicas :pid
+// useNavigate me permite cambiar la ruta de forma programatica, es decir
+// usarla en alguna función de Js
 
 const PortafolioDetalle = () => {
   const proyectos = [
@@ -9,12 +11,21 @@ const PortafolioDetalle = () => {
   ]
 
   const { pid } = useParams() // Tiene el valor que yo le mando en ruta
+  const navigate = useNavigate() // Para cambiar de ruta programaticamente
 
   return (
     <>
       <h3>ID: {proyectos[pid - 1].id}</h3>
       <h3>Nombre: {proyectos[pid - 1].nombre}</h3>
       <p>Descripción: {proyectos[pid - 1].desc}</p>
+
+      <button onClick={() => {
+        navigate('/portafolio')
+        // Si quiero ir a la página anterior del historial: navigate(-1)
+        // Si quiero ir a la página siguiente del historial: navigate(1)
+      }}
+      >Nos vamos al Portafolio
+      </button>
     </>
   )
 }
