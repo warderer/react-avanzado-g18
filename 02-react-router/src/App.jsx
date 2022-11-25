@@ -1,10 +1,14 @@
-import reactLogo from './assets/react.svg'
 import './App.css'
+import Contacto from './pages/Contacto'
+import Home from './pages/Home'
+import Portafolio from './pages/Portafolio'
 
 function App () {
   return (
     <div className='App'>
-      <h1>App</h1>
+      <Home />
+      <Portafolio />
+      <Contacto />
     </div>
   )
 }
