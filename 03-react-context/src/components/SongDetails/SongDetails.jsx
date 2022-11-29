@@ -1,8 +1,9 @@
 import React from 'react'
+import './songdetails.css'
 
 const SongDetails = () => {
   return (
-    <div>SonDetails</div>
+    <div>SongDetails</div>
   )
 }
 
