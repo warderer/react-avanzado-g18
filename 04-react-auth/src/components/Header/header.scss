@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 $menu-color: #3d3d3d;
 
 @mixin header-link ($hover: true) {
@@ -13,6 +15,7 @@ $menu-color: #3d3d3d;
 }
 
 .header {
+    font-family: 'Roboto', sans-serif;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
