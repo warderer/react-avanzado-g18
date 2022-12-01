@@ -1,5 +1,17 @@
 $menu-color: #3d3d3d;
 
+@mixin header-link ($hover: true) {
+    color: $menu-color;
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    @if $hover {
+        &:hover {
+            border-bottom: solid 2px $menu-color;
+        }
+    }
+}
+
 .header {
     background-color: #fff;
     display: flex;
@@ -8,9 +20,7 @@ $menu-color: #3d3d3d;
     padding: 15px 30px;
 
     &__logo {
-        color: $menu-color;
-        text-decoration: none;
-        letter-spacing: 2px;
+        @include header-link(false);
     }
 
     &__nav-list {
@@ -20,11 +30,9 @@ $menu-color: #3d3d3d;
     }
 
     &__item-link {
-        color: $menu-color;
-        text-decoration: none;
-        letter-spacing: 2px;
+        @include header-link;
 
-        &:hover {
+        &--is-active {
             border-bottom: solid 2px $menu-color;
         }
     }
