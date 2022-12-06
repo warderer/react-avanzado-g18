@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom'
 import useForm from '@/hooks/useForm'
+import { registerUserService } from '@/services/userServices'
 import '@/assets/css/form.css'
 import logo from '@/assets/react.svg'
 
@@ -10,8 +12,18 @@ const Signup = () => {
 //     "email": "danylo@gmail.com",
 //     "password": "gatito123"
 // }
-  const sendData = (data) => {
-    console.log(data)
+  // Usamos el hook navigate para navegar hacia Login
+  const navigate = useNavigate()
+
+  const sendData = async (data) => {
+    try {
+      const response = await registerUserService(data)
+      if (response.status === 200) {
+        navigate('/login')
+      }
+    } catch (error) {
+      console.log('Ocurrio un Error: ', error.message)
+    }
   }
 
   const { input, handleInputChange, handleSubmit } = useForm(sendData, {
