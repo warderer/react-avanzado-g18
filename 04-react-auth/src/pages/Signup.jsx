@@ -1,3 +1,4 @@
+import useForm from '@/hooks/useForm'
 import '@/assets/css/form.css'
 import logo from '@/assets/react.svg'
 
@@ -9,10 +10,22 @@ const Signup = () => {
 //     "email": "danylo@gmail.com",
 //     "password": "gatito123"
 // }
+  const sendData = (data) => {
+    console.log(data)
+  }
+
+  const { input, handleInputChange, handleSubmit } = useForm(sendData, {
+    first_name: '',
+    last_name: '',
+    gender: '',
+    email: '',
+    password: ''
+  })
+
   return (
     <div>
       <main className='form-signin w-100 m-auto'>
-        <form>
+        <form onSubmit={handleSubmit}>
           <img className='mb-4' src={logo} alt='' width='72' height='57' />
           <h1 className='h3 mb-3 fw-normal'>Please sign up</h1>
 
@@ -23,8 +36,8 @@ const Signup = () => {
               id='first_name'
               placeholder='Elias'
               name='first_name'
-              value=''
-              onChange={() => {}}
+              value={input.first_name}
+              onChange={handleInputChange}
             />
             <label htmlFor='first_name'>First Name</label>
           </div>
@@ -36,8 +49,8 @@ const Signup = () => {
               id='last_name'
               placeholder='Shuchleib'
               name='last_name'
-              value=''
-              onChange={() => {}}
+              value={input.last_name}
+              onChange={handleInputChange}
             />
             <label htmlFor='last_name'>Last Name</label>
           </div>
@@ -47,8 +60,8 @@ const Signup = () => {
               className='form-select'
               id='gender'
               name='gender'
-              value=''
-              onChange={() => {}}
+              value={input.gender}
+              onChange={handleInputChange}
             >
               <option value=''>Choose...</option>
               <option value='M'>Male</option>
@@ -64,8 +77,8 @@ const Signup = () => {
               id='email'
               placeholder='name@example.com'
               name='email'
-              value=''
-              onChange={() => {}}
+              value={input.email}
+              onChange={handleInputChange}
             />
             <label htmlFor='email'>Email address</label>
           </div>
@@ -77,8 +90,8 @@ const Signup = () => {
               id='password'
               placeholder='Password'
               name='password'
-              value=''
-              onChange={() => {}}
+              value={input.password}
+              onChange={handleInputChange}
             />
             <label htmlFor='password'>Password</label>
           </div>
