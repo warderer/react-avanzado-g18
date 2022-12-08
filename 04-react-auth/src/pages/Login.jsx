@@ -1,10 +1,13 @@
+import { useContext } from 'react'
 import '@/assets/css/form.css'
 import logo from '@/assets/react.svg'
 import useForm from '@/hooks/useForm'
 import { loginUserService } from '@/services/userServices'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '@/context/AuthContext'
 
 const Login = () => {
+  const { loginUser } = useContext(AuthContext)
   // Redirigir programaticamente con un hook
   const navigate = useNavigate()
 
@@ -13,7 +16,7 @@ const Login = () => {
       const result = await loginUserService(data)
       if (result.status === 200) {
         const token = result.data.token
-        window.localStorage.setItem('token', token)
+        loginUser(token)
         navigate('/dashboard')
       }
     } catch (error) {
