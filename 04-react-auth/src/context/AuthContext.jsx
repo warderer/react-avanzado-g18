@@ -29,7 +29,8 @@ export function AuthProvider (props) {
     const token = window.localStorage.getItem('token')
     if (token) {
       const decoded = jwt_decode(token)
-      console.log(decoded)
+      setUser(decoded)
+      setIsAuth(true)
     }
   }, [])
 
