@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '@/context/AuthContext'
-import { getSingleUser } from '@/services/userServices'
+// import { getSingleUser } from '@/services/userServices'
+import { getSingleUser } from '@/services/fakeUserServices'
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext)

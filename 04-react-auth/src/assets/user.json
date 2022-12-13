@@ -1,0 +1,12 @@
+{
+    "isActive": true,
+    "_id": "638e9de6aad08f0015afa37c",
+    "first_name": "Danilo",
+    "last_name": "Parc",
+    "birth_date": "1995-01-23T00:00:00.000Z",
+    "gender": "M",
+    "email": "danylooooo@gmail.com",
+    "createdAt": "2022-12-06T01:41:58.572Z",
+    "updatedAt": "2022-12-06T01:41:58.572Z",
+    "__v": 0
+}
